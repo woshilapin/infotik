@@ -3,3 +3,20 @@
 body {
 	color: var(--fontColor);
 }
+
+.array {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: x-large;
+	color: color(blue blackness(33%) a(-33%));
+
+	& td {
+		width: 1em;
+		height: 1em;
+		text-align: center;
+		border-left-style: solid;
+		border-right-style: solid;
+		border-color: gray(33%);
+		border-width: 1px;
+	}
+}

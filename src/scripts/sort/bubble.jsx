@@ -1,31 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import _ from 'lodash';
+class Array extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			"array": props.values
+		};
+	}
 
-function component() {
-  var element = document.createElement('div');
-
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
-
-document.body.appendChild(component());
-
-class World extends React.Component {
 	render() {
-		return <h1>World</h1>;
+		const cells = this.state.array.map((number) => (
+			<td key={number.toString()}>{number}</td>
+		));
+		return (
+			<table className="array">
+				<tbody>
+					<tr>{cells}</tr>
+				</tbody>
+			</table>
+		);
 	}
 }
 
-ReactDOM.render(<World/>, document.getElementById('world'));
-
-class Hello extends React.Component {
-  render() {
-    return <h1>Hello</h1>;
-  }
+const array = document.getElementById('array');
+const tds = array.getElementsByTagName('td');
+const values = [];
+for (const td of tds) {
+	values.push(td.textContent);
 }
-
-ReactDOM.render(<Hello/>, document.getElementById('hello'));
+ReactDOM.render(<Array values={values} />, array);
