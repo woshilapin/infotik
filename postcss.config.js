@@ -14,6 +14,10 @@ module.exports = (context) => ({
 		"postcss-custom-properties": {},
 		// To have the 'gray()' function in CSS
 		"postcss-color-gray": {},
+		// Include neet function to create colors
+		"postcss-color-function": {},
+		// Allow the use of nesting
+		"postcss-nesting": {},
 		// Use 'Can I Use' website to add or remove vendor prefix in CSS rules
 		"autoprefixer": {},
 		// Minify the CSS file
